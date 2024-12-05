@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Health Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For Progress Chart -->
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>Personal Health Manager</h1>
+        <p>Track your health and fitness progress</p>
+    </div>
+</header>
+
+<!-- Authentication Section -->
+<section id="auth-section" class="auth-container">
+    <div id="login-form" class="auth-form">
+        <h2>Login</h2>
+        <form id="login">
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="#" id="show-signup">Signup</a></p>
+        </form>
+    </div>
+
+    <div id="signup-form" class="auth-form" style="display:none;">
+        <h2>Signup</h2>
+        <form id="signup">
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+            <button type="submit">Signup</button>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </form>
+    </div>
+</section>
+
+<!-- Main Content Section (after login/signup) -->
+<section id="main-content" class="main-container" style="display:none;">
+    <div class="profile">
+        <img id="profile-photo" src="default-avatar.jpg" alt="Profile Photo" />
+        <input type="file" id="photo-upload" accept="image/*" />
+        <p id="username-display">Welcome, User</p>
+        <button id="edit-profile-btn">Edit Profile</button>
+    </div>
+
+    <div class="goals">
+        <h3>Set Fitness Goals</h3>
+        <input type="number" id="goal-steps" placeholder="Steps Goal">
+        <input type="number" id="goal-calories" placeholder="Calories Goal">
+        <button id="set-goals">Set Goals</button>
+        <p id="goal-message"></p>
+    </div>
+
+    <div class="progress-chart">
+        <canvas id="progress-chart"></canvas>
+    </div>
+
+    <div class="nutrition-tracking">
+        <h3>Nutrition Tracking</h3>
+        <input type="text" id="meal-name" placeholder="Meal Name">
+        <input type="number" id="meal-calories" placeholder="Calories">
+        <button id="add-meal">Add Meal</button>
+        <p id="meal-log"></p>
+    </div>
+
+    <div class="daily-log">
+        <h3>Daily Health Log</h3>
+        <input type="number" id="sleep-hours" placeholder="Sleep Hours">
+        <input type="number" id="water-intake" placeholder="Water Intake (L)">
+        <input type="text" id="mood" placeholder="Mood">
+        <button id="log-health">Log Health</button>
+        <p id="health-log-message"></p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Personal Health Manager. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
